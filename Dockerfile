@@ -1,6 +1,6 @@
 FROM node:16.15.1-alpine as build
 
-ARG environment=prod
+ARG environment=development
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install 

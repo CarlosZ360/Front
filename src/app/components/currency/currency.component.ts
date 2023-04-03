@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 //import { environment } from 'src/environments/environment';
 import { ResponseCurrencyDto } from "../../dto/response.currency.dto";
 import {CurrencyService} from "../../service/currency.service";
-
+import { KeycloakService } from 'keycloak-angular';
 @Component({
   selector: 'app-currency',
   templateUrl: './currency.component.html',
@@ -14,12 +14,15 @@ export class CurrencyComponent {
   set = 'ss';
   currencyForm: FormGroup;
   responseCurrencyDto: ResponseCurrencyDto;
-  constructor (private formBuilder: FormBuilder, private currencyService: CurrencyService) {
+  constructor (private formBuilder: FormBuilder, private currencyService: CurrencyService,
+    private keycloakService: KeycloakService) {
     this.currencyForm = this.formBuilder.group({
       from: '',
       to: '',
       amount: ''
     });
+    console.log(this.keycloakService.loadUserProfile());
+    
   }
   submit() {
     //console.log(environment.API_KEY);
@@ -37,5 +40,8 @@ export class CurrencyComponent {
       error: error => {console.log("Error",error)}
     })
     console.log("testsss");
+  }
+  logout(){
+    this.keycloakService.logout("http://localhost:4200")
   }
 }

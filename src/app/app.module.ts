@@ -20,6 +20,7 @@ import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 import { CurrencyComponent } from './components/currency/currency.component';
 import { ErrorComponent } from './components/error/error.component';
 
+
 //import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ErrorComponent } from './components/error/error.component';
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule,
     MatTableModule,
     MatDatepickerModule,
     KeycloakAngularModule
