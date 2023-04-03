@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 //import { environment } from 'src/environments/environment';
-import { ResponseCurrencyDto } from "./dto/response.currency.dto";
-import {CurrencyService} from "./service/currency.service";
+import { ResponseCurrencyDto } from "../../dto/response.currency.dto";
+import {CurrencyService} from "../../service/currency.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-currency',
+  templateUrl: './currency.component.html',
+  styleUrls: ['./currency.component.css']
 })
-export class AppComponent {
+export class CurrencyComponent {
   title = 'software';
   set = 'ss';
   currencyForm: FormGroup;
